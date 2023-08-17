@@ -16,7 +16,7 @@ function init() {
       const generateLayoutsCommand = `cd ${projectName} && npm run generate-layouts`;
       const generatingLayouts = runCommand(generateLayoutsCommand);
       if (!generatingLayouts) process.exit(1);
-      console.log('Project generated. Please write "npm run dev" command start it locally');
+      console.log('Project successfully generated. Please type “cd <folderName> && npm run dev” command to start the website locally.');
     }));
 }
 
@@ -42,7 +42,7 @@ function cloneRepository() {
   fs.ensureDirSync(tempDirPath);
   try {
     execSync(gitCheckoutCommand, {
-      stdio: [0, 1, 2], // we need this so node will print the command output
+      stdio: [0, 1, 2],
       cwd: tempDirPath,
     })
   } catch (e) {
@@ -65,7 +65,7 @@ async function promptApiUrl () {
   const response = await prompts({
     type: 'text',
     name: 'apiUrl',
-    message: 'Please enter API url from development tab in editor:'
+    message: 'Enter ‘API_URL’ environment variable value (can be found in Control -> Project Dashboard -> Development)'
   });
   const apiUrl = response.apiUrl;
   return apiUrl;
