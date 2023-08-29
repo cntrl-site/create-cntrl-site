@@ -16,7 +16,7 @@ function init() {
       const generateLayoutsCommand = `cd ${projectName} && npm run generate-layouts`;
       const generatingLayouts = runCommand(generateLayoutsCommand);
       if (!generatingLayouts) process.exit(1);
-      console.log('Project successfully generated. Please type “cd <folderName> && npm run dev” command to start the website locally.');
+      console.log(`Project successfully generated. Please type “cd ${projectName} && npm run dev” command to start the website locally.`);
     }));
 }
 
