@@ -1,6 +1,6 @@
 {
   "name": "create-cntrl-site",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "bin": {
     "create-cntrl-site": "./bin/index.js"
   },
