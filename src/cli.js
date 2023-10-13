@@ -44,12 +44,13 @@ function cloneRepository() {
     execSync(gitCheckoutCommand, {
       stdio: [0, 1, 2],
       cwd: tempDirPath,
-    })
+    });
   } catch (e) {
     console.error(`Failed to execute ${gitCheckoutCommand}`, e);
     process.exit(1);
   }
-  fs.removeSync(path.join(tempDirPath, '.git'));
+
+  fs.removeSync(path.join(tempDirPath, path.join(projectName, '.git')));
   fs.copySync(tempDirPath, path.join(process.cwd()));
   fs.removeSync(tempDirPath);
 }
